@@ -53,7 +53,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Metro</span></a>
+				<a class="brand" href="index.html"><span>EShopper</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -341,8 +341,8 @@
 						<li><a href="{{URL::to('/all-category')}}"><i class="icon-envelope"></i><span class="hidden-tablet"> All Category</span></a></li>
                         <li><a href="{{URL::to('/add-category')}}"><i class="icon-tasks"></i><span class="hidden-tablet"> Add Category</span></a></li>
                         
-						<li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet">All Brands</span></a></li>
-						<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Add Brand</span></a></li>
+						<li><a href="{{URL::to('/all-manufacture')}}"><i class="icon-eye-open"></i><span class="hidden-tablet">All Manufacture</span></a></li>
+						<li><a href="{{URL::to('/add-manufacture')}}"><i class="icon-dashboard"></i><span class="hidden-tablet"> Add Manufacture</span></a></li>
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Products </span><span class="label label-important"> New </span></a>
 							<ul>
@@ -434,7 +434,20 @@
 		<script src="{{asset('backend/js/counter.js')}}"></script>	
 		<script src="{{asset('backend/js/retina.js')}}"></script>
 		<script src="{{asset('backend/js/custom.js')}}"></script>
-	<!-- end: JavaScript-->
+        <!-- end: JavaScript-->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+        <script>
+            
+        $(document).on("click", "#delete", function(e){
+            e.preventDefault();
+            var link = $(this).attr("href");
+            bootbox.confirm("Are you want to delete!!", function(confirmed){
+                if(confirmed){
+                    window.location.href = link;
+                }
+            })
+        })
+        </script>
 	
 </body>
 </html>
